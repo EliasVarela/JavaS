@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.nav_menu {
+    display: flex;
+    height: 120px;
+    border: 2px solid black;
+    background-color: whitesmoke;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.titulo {
+    font-size: 40px;
+}
+
+.contProductos {
+    display: flex;
+    align-content: space-between;
+    margin: 20px;
+    padding: 15px;
+}
+
+.card {
+    font-size: 40px;
+    margin: 7px;
+}
+:hover.btnAgregar{
+    background-color: red;
+}
+
+/* Footer */
+footer { 
+    border: 3px solid black;
+    margin: 15px;
+    padding: 3px;
+}
+
+footer h3 {
+    text-align: center;
+}
+
+footer .copy {
+    text-align: right;
+}
+
+footer p {
+    text-align: center;
+    font-size: 30px;
+}
+
+footer ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0;
+}
+
+footer .twiter {
+    height: 50px;
+    width: 50px;
+}
+
+footer .twiter img {
+    height: 100%;
+    width: 100%;
+}
+
+footer .youtube {
+    height: 50px;
+    width: 50px;
+}
+
+footer .youtube img {
+    height: 100%;
+    width: 100%;
+}
+
+footer .instagram {
+    height: 50px;
+    width: 50px;
+}
+
+footer .instagram img {
+    height: 100%;
+    width: 100%;
+}
+
+footer .facebook {
+    height: 50px;
+    width: 50px;
+}
+
+footer img {
+    height: 100%;
+    width: 100%;
+}
