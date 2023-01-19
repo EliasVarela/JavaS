@@ -12,7 +12,7 @@
     <title>Niku Carnes De Primera</title>
 </head>
 
-<body>
+<body onload="onLoad()">
     <header>
         <nav class="navbar container-fluid nav_menu">
             <a class="navbar-brand" href="./index.html">
@@ -25,8 +25,36 @@
             </a>
         </nav>
     </header>
+    <div id="Carrito display-none " ></div>
     <div id="container" class="contProductos">
+    </div>
+    <div class="container climaCont">
+        <div class="block">
+            <div class="infoCont">
+             <div id="location"></div>
+            </div>
+            <div class="infoCont">
+                Fecha:<div id="date"></div>
+            </div>
+            <div class="infoCont">
+            Temperatura:<div id="temperature"></div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="infoCont">
+            Presion:<div id="pressure"></div>
+            </div>
+            <div class="infoCont">
+            Cielo : <div id="description"></div>
+            </div>
+            <div class="infoCont">
+            Humedad % :<div id="humidity"></div>
+            </div>
 
+
+
+        </div>
+            
     </div>
     <footer>
         <h3>Carniceria Niku Derechos Reservados</h3>

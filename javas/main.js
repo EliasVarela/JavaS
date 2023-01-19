@@ -79,11 +79,50 @@ function agregarAlCarro(alimento) {
         carritoCompra = [
             ...filtroCarrito,
             { ...alimCarrito, cantidad: alimCarrito.cantidad + 1 }
+            
         ]
     }
+    
     localStorage.setItem("carrito",JSON.stringify(carritoCompra))
     contador.innerHTML = carritoCompra.reduce((acc, prod) => acc + prod.cantidad, 0)
+    
 }
 
 const contador = document.getElementById('cartCounter')
 contador.innerHTML = carritoCompra.reduce((acc, prod) => acc + prod.cantidad, 0)
+//Fetch del Clima
+const apiKey = `26b0947fd3942461ad103c16382f3554`;
+
+const fetchData = position =>{
+    const{latitude, longitude} = position.coords;
+    fetch(`http://api.openweathermap.org/data/2.5/weather?units=metric&lat=${latitude}&lon=${longitude}&appid=${apiKey}`)
+        .then(response => response.json())
+        .then(data =>setWeatherData(data)); 
+}
+const setWeatherData = data =>{
+    console.log(data);
+    const watherData = {
+        location: data.name,
+        description: data.weather[0].main,
+        humidity: data.main.humidity,
+        pressure: data.main.pressure,
+        temperature:data.main.temp,
+        date : getDate(),
+    } 
+    Object.keys(watherData).forEach(key =>{
+        document.getElementById(key).textContent = watherData[key];
+    }
+        )
+}
+const getDate = () =>{
+    let date = new Date();
+    return `${date.getDate()}-${("0" +(date.getMonth() +1)).slice(-2)}-${date.getFullYear()}`;
+}
+const onLoad = () =>{
+    navigator.geolocation.getCurrentPosition(fetchData);
+}
+
+
+
+
+

@@ -14,7 +14,6 @@ function renderizarCarrito(array) {
                         <p>${producto.tipo}</p>
                             <div>
                             <p>$${producto.precio}</p>
-                            
                             <p>x${producto.cantidad}</p>
                             </div>
                             <div class="btn-container">
@@ -22,11 +21,13 @@ function renderizarCarrito(array) {
                             </div>
                         </div>
                         </div>`
+
         divCarrito.appendChild(div)
     })
-}
 
+}
 renderizarCarrito(carritoCompra)
+
 
 const eliminarCarrito = (producto) => {
     const item = carritoCompra.find(prod => prod.id == producto)
@@ -35,4 +36,16 @@ const eliminarCarrito = (producto) => {
     renderizarCarrito(carritoCompra)
     localStorage.setItem("carrito", JSON.stringify(carritoCompra))
 }
+
+
+function carritoTotal() {
+    let total = 0;
+    const itemCarTotal = document.getElementsByClassName(".itemCarTotal");
+    carritoCompra.forEach((producto) => {
+        const precio = Number(producto.precio.replace("$", ""))
+        total = total + precio * producto.cantidad
+    })
+    itemCarTotal.innerHTML = `Total $${total}`
+}
+
 // trate de buscar la meanera para eliminar de a un producto pero no me salio :S
