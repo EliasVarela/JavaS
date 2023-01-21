@@ -1,4 +1,4 @@
-const producto = []
+let producto = []
 let carritoCompra = JSON.parse(localStorage.getItem("carrito")) || []
 
 class Producto {

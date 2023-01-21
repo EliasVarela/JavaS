@@ -39,13 +39,25 @@ const eliminarCarrito = (producto) => {
 
 
 function carritoTotal() {
+    const itemCarTotal = document.getElementsByClassName("itemCarTotal");
+    console.log(carritoCompra);
     let total = 0;
-    const itemCarTotal = document.getElementsByClassName(".itemCarTotal");
-    carritoCompra.forEach((producto) => {
-        const precio = Number(producto.precio.replace("$", ""))
-        total = total + precio * producto.cantidad
+    carritoCompra.forEach(producto =>{
+        const precio = producto.precio
+        total = total + (precio * producto.cantidad)
+        ;
     })
-    itemCarTotal.innerHTML = `Total $${total}`
+    console.log(total)
+    itemCarTotal[0].innerText =`Total $${total}`
+    return total
 }
+carritoTotal()
 
+function btnCompra (){
+    const btn =document.getElementsByClassName("btnCompra");
+    Swal.fire({
+        title: "Grascias Por su compra!! ",
+        icon: "success" ,
+        })
+}
 // trate de buscar la meanera para eliminar de a un producto pero no me salio :S
